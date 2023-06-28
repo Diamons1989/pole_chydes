@@ -22,8 +22,8 @@ while attempts < max_attempts and not guessed:
             print(hidden_word)
         else:
             print("Такої літери немає")
+            attempts += 1
     else:
         print("Спробуйте ще раз!")
-    attempts += 1
 if not guessed:
     print("Ви програли! Загадане слово було:", random_word)
