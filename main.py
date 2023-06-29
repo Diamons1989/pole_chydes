@@ -14,6 +14,7 @@ while attempts < max_attempts and not guessed:
     if guess == random_word:
         print("Вітаю, ви вгадали слово!")
         guessed = True
+        break
     elif len(guess) == 1 and guess.isalpha():
         if guess in random_word:
             for i in range(len(random_word)):
@@ -22,8 +23,10 @@ while attempts < max_attempts and not guessed:
             print(hidden_word)
         else:
             print("Такої літери немає")
-            attempts += 1
     else:
         print("Спробуйте ще раз!")
-if not guessed:
+    attempts += 1
+if guessed:
+    print("Вітаю, ви вгадали слово!")
+else:
     print("Ви програли! Загадане слово було:", random_word)
